@@ -1,13 +1,18 @@
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter,Routes,Route,useLocation } from 'react-router-dom'
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Header from './components/Header';
 
 export default function App() {
+  // const location = useLocation();
+  // const isSignupPage = location.pathname === '/sign-up';
+
   return( 
   <BrowserRouter>
-    <Header/>
+    {/* {!isSignupPage && <Header />} */}
+
+    {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={ <Signin />} />
