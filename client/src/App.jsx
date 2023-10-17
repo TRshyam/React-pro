@@ -2,7 +2,6 @@ import {BrowserRouter,Routes,Route,useLocation } from 'react-router-dom'
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
-import Header from './components/Header';
 
 export default function App() {
   // const location = useLocation();
@@ -12,11 +11,10 @@ export default function App() {
   <BrowserRouter>
     {/* {!isSignupPage && <Header />} */}
 
-    {/* <Header/> */}
       <Routes>
-        <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={ <Signin />} />
         <Route path='/sign-up' element={ <Signup />} />
+        <Route path='/' element={<Home />} />
       </Routes>
   </BrowserRouter>
   )

@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react'; // Import React
+
+import Header from '../components/Header';
+import Productbox from '../components/productbox';
+
 
 export default function Home() {
   return (
-  <h1>Hello worlld</h1>
-  )
+    <div>
+      <Header />
+      <Productbox/>
+    </div>
+  );
 }
