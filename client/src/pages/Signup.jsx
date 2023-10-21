@@ -1,10 +1,11 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import SignupImage from '../assets/images/signup1.jpg'; // Use '..' to navigate up one level if your component is in a subdirectory
 
 
 export default function Signup() {
     return (
-      <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+      <div className="bg-gray-100 min-h-screen flex items-center justify-center select-none"> 
       
         <div className="bg-white p-8 rounded shadow-md w-full max-w-2xl mx-auto md:flex">
           <div className="md:w-1/2 p-4">
@@ -78,6 +79,10 @@ export default function Signup() {
             >
               Sign Up
             </button>
+            <p>Have an account?</p>
+            <Link to={"/sign-in"}>
+              <span className='text-cyan-500'>Sign-In</span>
+            </Link>
               </form>
           </div>
         </div>
