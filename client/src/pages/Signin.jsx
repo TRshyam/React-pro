@@ -1,13 +1,16 @@
 import React from 'react';
 import {useState} from 'react'
 import {Link,useNavigate} from 'react-router-dom';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice';
 
 
 export default function Signin() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(null);
+  const {loding,error}=useSelector((state)=>state.user);
   const navigate = useNavigate();
+  const dispatch =useDispatch()
 
   const [state, setstate] = useState({});
   const Session= (e) => {
@@ -26,6 +29,7 @@ export default function Signin() {
 
     // make a request to the api
 try{
+  dispatch(signInStart())
     const res=await fetch('/api/auth/signin',
     {
       method:'POST',
@@ -38,15 +42,19 @@ try{
     const data = await res.json();
     console.log(data);
     if (data.success === false) {
-      setError(data.mes);
+      dispatch(signInFailure(data.mes))
+      // setError(data.mes);
       return;
     }
-  
-    setError(null);
+    dispatch(signInSuccess(data))
+
+    // setError(null);
     navigate('/');
   }
     catch (error) {
-      setError(error.mes);
+      // setError(error.mes);
+      dispatch(signInFailure(error.mes))
+
     }
   };
 
