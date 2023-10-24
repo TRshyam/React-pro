@@ -7,4 +7,4 @@ export const errHandeler=(statusCode,message)=>{
     err.message=message;
     console.log(err);
     return err;
-}
+};
