@@ -3,9 +3,38 @@ import {FaSearch} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import {
+  deleteUserFailure,
+  deleteUserSuccess,
+  signOutUserStart,
+} from '../redux/user/userSlice';
+import { useDispatch } from 'react-redux';
+
 
 export default function Header() {
+
+  const dispatch=useDispatch()
   const {currentUser}=useSelector(state =>state.user)
+  
+  const SignOut = async () => {
+    try {
+      dispatch(signOutUserStart());
+      const res = await fetch('/api/auth/signout');
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
+    } catch (error) {
+      dispatch(deleteUserFailure(data.message));
+    }
+  };
+
+
+
+
+  
   return (
     <nav className='bg-red-200 flex justify-around m-0' >
     <Link to='/'>
@@ -51,7 +80,9 @@ export default function Header() {
                   Sign-In
                 </li>
             )}
-            
+            </Link>
+            <Link>
+              <button onClick={SignOut}>LogOut</button>
             </Link>
       
             
