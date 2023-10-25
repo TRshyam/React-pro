@@ -43,7 +43,7 @@ export default function productbox() {
     </div>
 
   
-    <div className="flex flex-wrap w-4/5 gap-4 border px-6 ">
+    <div className="flex flex-wrap w-4/5 gap-2 border px-6 ">
         <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
             <div class="flex items-center">
               <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />

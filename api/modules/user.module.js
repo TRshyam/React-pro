@@ -17,6 +17,14 @@ const userSchema = new mongoose.Schema(
       required:true,
       unique:true,
     },
+    address:{
+      type:String,
+      default:null,
+    },
+    zipcode:{
+      type:Number,
+      default:null,
+    },
     password: {
       type: String,
       required: true,
