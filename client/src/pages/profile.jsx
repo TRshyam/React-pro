@@ -107,10 +107,6 @@ function ProfilePage() {
              <Link to={"/"}>
                <span className='text-cyan-500'>Home Page</span>
              </Link>
- 
- 
- 
- 
              </div>
          </div>
       </div>

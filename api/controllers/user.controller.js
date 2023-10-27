@@ -18,9 +18,9 @@ export const updateUserInfo=async  (req,res,next)=>{
 
   try {
     if (req.body.password) {
-        console.log("work+++++++++++>>>>>>>>>>>");
+        // console.log("work+++++++++++>>>>>>>>>>>");
       req.body.password = bcryptjs.hashSync(req.body.password, 10);
-      console.log( req.body.password );
+      // console.log( req.body.password );
     }
     console.log(req.params.id)
     // console.log(rest)
@@ -53,3 +53,6 @@ export const updateUserInfo=async  (req,res,next)=>{
   }
 
 };
+
+
+

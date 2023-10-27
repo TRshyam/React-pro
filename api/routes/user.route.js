@@ -9,4 +9,5 @@ route.get('/test',test);
 // console.log("auth.route.js")
 route.post('/update/:id',verifyUser,updateUserInfo)
 
-export default route;
+
+export default route; 

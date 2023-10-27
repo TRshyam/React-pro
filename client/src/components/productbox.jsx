@@ -1,7 +1,30 @@
-import React from 'react'
-import SignupImage from '../assets/images/mirissa.jpg';
+import React, { useState, useEffect } from 'react';
 
-export default function productbox() {
+function Productbox() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+   
+    fetch('/api/admin/products') 
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error('Error fetching products:', error));
+  }, []);
+
+// {
+    /* <ul>
+{products.map((product) => (
+  <li key={product._id}>
+    <h2>{product.productName}</h2>
+    <p>Description: {product.productDescription}</p>
+    <p>Manufacturer/Marketer: {product.productManufacturer}</p>
+    <p>Price: {product.regularPrice}</p>
+    // {/* Add more product information here */
+// }
+//   </li>
+// ))}
+// </ul> */}
+
   return (    
 
   <div class="px-2 mb-4 select-none flex ">
@@ -44,48 +67,16 @@ export default function productbox() {
 
   
     <div className="flex flex-wrap w-4/5 gap-2 border px-6 ">
+    {products.map((product) => (
+
         <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
             <div class="flex items-center">
-              <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />
+              {/* <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" /> */}
+              <img src={product.imgurl+"?tr=w-250,q-80,f-webp,c-at_max"}/>
+
             </div>
             <div class="mt-4 text-center">
-                <h3 class="text-xl font-semibold ">Ensure Complete</h3>
-                <h5 class="text-gray-600">Price: ₹583</h5>
-                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-12 rounded-lg">
-                    Add
-                </button>
-            </div>
-        </div>
-        <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
-            <div class="flex items-center">
-              <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />
-            </div>
-            <div class="mt-4 text-center">
-                <h3 class="text-xl font-semibold ">Ensure Complete</h3>
-                <h5 class="text-gray-600">Price: ₹583</h5>
-                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-12 rounded-lg">
-                    Add
-                </button>
-            </div>
-        </div>
-        <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
-            <div class="flex items-center">
-              <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />
-            </div>
-            <div class="mt-4 text-center">
-                <h3 class="text-xl font-semibold ">Ensure Complete</h3>
-                <h5 class="text-gray-600">Price: ₹583</h5>
-                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-12 rounded-lg">
-                    Add
-                </button>
-            </div>
-        </div>
-        <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
-            <div class="flex items-center">
-              <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />
-            </div>
-            <div class="mt-4 text-center">
-                <h3 class="text-xl font-semibold ">Ensure Complete</h3>
+                <h3 class="text-xl font-semibold ">{product.productName}</h3>
                 <h5 class="text-gray-600">Price: ₹583</h5>
                 <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-12 rounded-lg">
                     Add
@@ -93,45 +84,14 @@ export default function productbox() {
             </div>
         </div>
 
-        <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
-            <div class="flex items-center">
-              <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />
-            </div>
-            <div class="mt-4 text-center">
-                <h3 class="text-xl font-semibold ">Ensure Complete</h3>
-                <h5 class="text-gray-600">Price: ₹583</h5>
-                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-12 rounded-lg">
-                    Add
-                </button>
-            </div>
-        </div>
-        <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
-            <div class="flex items-center">
-              <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />
-            </div>
-            <div class="mt-4 text-center">
-                <h3 class="text-xl font-semibold ">Ensure Complete</h3>
-                <h5 class="text-gray-600">Price: ₹583</h5>
-                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-12 rounded-lg">
-                    Add
-                </button>
-            </div>
-        </div>
-        <div class="bg-white p-4 border border-gray-300 rounded cursor-pointer">
-            <div class="flex items-center">
-              <img src="https://images.apollo247.in/pub/media/catalog/product/6/7/6739531-1_ensure_hmb_vanilla_2kg_bib_fop_plunge.jpg?tr=w-250,q-80,f-webp,c-at_max" class="w-full h-full object-center justify-normal" alt="Product Image" />
-            </div>
-            <div class="mt-4 text-center">
-                <h3 class="text-xl font-semibold ">Ensure Complete</h3>
-                <h5 class="text-gray-600">Price: ₹583</h5>
-                <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-12 rounded-lg">
-                    Add
-                </button>
-            </div>
-        </div>
+    ))}
 
     </div>
 </div>
 
   );
-}
+  }
+
+
+
+export default Productbox;
