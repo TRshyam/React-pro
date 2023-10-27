@@ -36,11 +36,11 @@ function Productbox() {
       </div>
       <div class="flex text-center items-center border rounded-lg mx-2 px-2 my-3 cursor-pointer"> 
             <img src="https://images.apollo247.in/pub/media/healtharea/247images/i/c/ic_heart.png?tr=q-80,f-webp,c-at_max" class="w-14 h-14 rounded-lg my-2 px-2 py-2 bg-gray-300" />
-            <h4 class="mx-auto">Diabetes Care</h4> 
+            <h4 class="mx-auto">Heart Care</h4> 
       </div>
       <div class="flex text-center items-center border rounded-lg mx-2 px-2 my-3 cursor-pointer"> 
             <img src="https://images.apollo247.in/pub/media/healtharea/247images/i/c/ic_stomach.png?tr=q-80,f-webp,c-at_max" class="w-14 h-14 rounded-lg my-2 px-2 py-2 bg-gray-300" />
-            <h4 class="mx-auto">Diabetes Care</h4> 
+            <h4 class="mx-auto">Acidity</h4> 
       </div>
       <div class="flex text-center items-center border rounded-lg mx-2 px-2 my-3 cursor-pointer"> 
             <img src="https://images.apollo247.in/pub/media/healtharea/247images/i/c/ic_eyeear.png?tr=q-80,f-webp,c-at_max" class="w-14 h-14 rounded-lg my-2 px-2 py-2 bg-gray-300" />
