@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Profile from './pages/profile';
 import Valid from './components/valid';
 import AddProduct from './pages/addproduct';
+import Product from './pages/Product';
 
 export default function App() {
   // const location = useLocation();
@@ -23,6 +24,8 @@ export default function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/addProducts' element={<AddProduct/>} />
         </Route>
+        <Route path='/product' element={<Product />} />
+
       </Routes>
   </BrowserRouter>
   )

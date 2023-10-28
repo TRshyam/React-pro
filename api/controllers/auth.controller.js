@@ -1,12 +1,11 @@
 import User from '../modules/user.module.js';
 import bcryptjs from 'bcryptjs';
 
-// connecting the errorfunction
 import { errHandeler } from '../utils/error.js';
 import jwt from 'jsonwebtoken';
 
 
-console.log("auth.route.jsssss")
+// console.log("auth.route.jsssss")
 
 export const signup=async  (req,res,next)=>{
     // console.log(req.body);
