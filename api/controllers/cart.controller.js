@@ -1,6 +1,3 @@
-// import User from '../path-to-user-model'; // Import your User model
-// import Product from '../path-to-product-model'; // Import your Product model
-
 import products from "../modules/products.module.js";
 import User from "../modules/user.module.js";
 
